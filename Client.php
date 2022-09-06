@@ -5,6 +5,8 @@ namespace sammaye\solr;
 use Yii;
 use yii\base\Component;
 use Solarium\Client as SolrClient;
+use Solarium\Core\Client\Adapter\Curl;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class Client extends Component
 {
@@ -14,7 +16,10 @@ class Client extends Component
 
 	public function init()
 	{
-		$this->solr = new SolrClient($this->options);
+		$adapter = new Curl();
+		$eventDispatcher = new EventDispatcher();
+		
+		$this->solr = new SolrClient($adapter, $eventDispatcher, $this->options);
 	}
 
 	public function __call($name, $params)
