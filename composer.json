@@ -1,5 +1,5 @@
 {
-    "name": "sammaye/yii2-solr",
+    "name": "streamchartz/yii2-solr",
     "description": "Solr plugin for the Yii2 framework built ontop of Solarium",
     "type": "yii2-extension",
     "keywords": ["sammaye", "yii2", "extension", "yii2-extension", "Yii2 Extension", "solr", "solarium"],
